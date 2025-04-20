@@ -74,7 +74,7 @@ import shareIcon from './../../../assets/share.png'
 						</div>
 						{/**/ }
 						<div 
-						 onClick={() => setCopy(`/anime/${data.mal_id}`) }
+						 onClick={() => setCopy(`https://animelist-red.vercel.app/anime/${data.mal_id}`) }
 						 className='absolute top-5 right-20
 						w-[40px] h-[40px] p-[3px] rounded-[5px]
 						cursor-pointer  blur-white'>
