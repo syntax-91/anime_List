@@ -57,7 +57,9 @@ import shareIcon from './../../../assets/share.png'
 			<div className='w-[90vw] h-[40vh] mx-auto mt-[30px] flex flex-wrap justify-center'>
 
 				{animeList.map(data => (
-					<div className=' w-[190px] relative h-[340px] border border-[#444] m-[10px] rounded-2xl
+					<div
+					
+					className=' w-[220px] relative h-[360px] border border-[#444] m-[10px] rounded-2xl
 					 hup '
 					  
 					 key={data.mal_id}>

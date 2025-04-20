@@ -22,6 +22,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
         <div onClick={() => setIsOpen(false)} 
         className='fixed right-8  w-[200px]
         py-[10px] rounded-2xl cursor-pointer fn_sl'>
+          
           {/* options */}
 
         {/* profile */}
