@@ -1,0 +1,53 @@
+import { Outlet, useNavigate } from 'react-router-dom'
+import s from './styles.module.css'
+
+export function Settings() {
+
+	const nav = useNavigate();
+
+	return(
+	<div className={s.mc}>
+		<div className={s.blur_bg}></div>
+
+			<div className={s.content}>
+
+		<h2
+		 className='p-10 cursor-pointer inline-block'
+		 onClick={()=> nav(-1)}>Назад</h2>
+
+		<div className='flex  w-[90%] gap-5 mx-auto
+		overflow-x-auto max-w-full h-20'>
+
+			<div 
+			className='border border-[#fff]/30 
+			px-5 py-2 rounded-full h-12'
+			>Оснавные</div>
+			
+			<div
+			onClick={()=> nav('custom') }
+			className='border border-[#fff]/30 
+			px-5 py-2 rounded-full h-12'>кастомизация</div>
+
+			<div
+			className='border border-[#fff]/30 
+			px-5 py-2 rounded-full h-12'>
+				text
+			</div>
+
+			<div
+			className='border border-[#fff]/30 
+			px-5 py-2 rounded-full h-12'>
+				text
+			</div>
+			
+
+		</div>
+
+		<div className=' mx-auto w-[95%] h-[100vh]'>
+				<Outlet />
+		</div>
+
+			</div>
+	</div>
+	)
+}

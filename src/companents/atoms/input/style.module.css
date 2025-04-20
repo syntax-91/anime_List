@@ -1,0 +1,8 @@
+ .base {
+	background-color: rgba(21, 21, 21, 0.3);
+	
+	@apply px-[30px] rounded-[30px] outline-0
+	ml-[20px] h-[50px] flex-1/5 mx-[20px]  
+	
+
+ } 

@@ -1,0 +1,25 @@
+.mc {
+	width: 100wh;
+	height: 100vh;
+	position: relative;
+} 
+
+.blur_bg_Home {
+	background-image: url('./../../assets/bg_main.jpg');
+  
+  background-size: cover; 
+  background-position: center; 
+ 
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  filter: blur(10px); 
+}
+
+.Home_content {
+	position: relative;
+  z-index: 1; 
+}

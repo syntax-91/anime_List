@@ -1,0 +1,64 @@
+.base_ani {
+	 transition: all 0.3s ease;
+	 animation: base 0.3 ease forwards;
+}
+
+@keyframes base {
+	0% {opacity: 0;}	
+	100% {opacity: 1;}	
+} 
+
+/* fade-in slide Left */
+.fn_sl {
+  animation: w 0.2s ease forwards;
+	transition: all 0.2 ease;
+  cursor: pointer;
+} 
+
+@keyframes w {
+  0% {
+    opacity: 0.6;
+      right: 20px;
+  }
+  
+  100% {
+    opacity: 1;
+      right: 30px;
+  }
+}
+
+/* fade-in */
+.fn {
+  transition: all 0.3s ease-in-out;
+  animation: a 0.3s ease;
+}
+
+@keyframes a {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* hover: up */
+.hup:hover  {
+  transform: scale(1.1);
+}
+
+/* pulse */
+
+.pulse {
+  transition: all 0.9s ease;
+  animation: pulse 2s ease-in-out infinite;  
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.9; }
+  100% { opacity: 1; }
+}

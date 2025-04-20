@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+.mc {
+	
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.blur_bg {
+  background-image: url('./../../assets//bg_main.jpg');
+  background-size: cover; 
+  background-position: center; 
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  filter: blur(100px); 
+}
+
+.content {
+  position: relative;
+  z-index: 1; 
+}

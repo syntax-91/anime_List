@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+* {
+  transition: all 0.3s ease;
+  
+}
+
+::selection {
+  color: #8c8c8c;
+}
+
+
+:root {
+  font-family: monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #e0e0e5;
+  text-decoration: inherit;
+  margin-left: 10px;
+  position: relative;
+}
+
+a::after {
+  transition: all 0.3s ease;
+  content: '';
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(219, 219, 219);
+
+  
+  transform: scale(0);
+}
+
+a:hover::after {
+  color: #d3d4d4;
+  transform: scale(1);
+}
+ 
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* global styles */
+
+.btn_base {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.btn_base:hover {
+  border-color: #646cff;
+}
+.btn_base:focus,
+.btn_base:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* animations */
+
+
+
+h4 {
+  font-size: 25px;
+}
+
+ 
+
+.elm {
+  background-color: rgba(0,0,0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.elm:hover {
+  background-color: rgba(0,0,0, 0.3);
+  backdrop-filter: blur(15px);
+}
+
+/**/
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blur-white {
+  background-color: rgba(100, 100, 100, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.oya {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.opening_info {
+  transform: scale(0.6);
+  transform-origin: center;
+
+  transition: all 0.3 ease-in;
+  animation: ee 0.5s ease forwards;
+}
+
+@keyframes ee {
+  0% { opacity: 0;  }
+  100% { opacity: 1;  transform: scale(1); } 
+}
+
+
+.about_us {
+  height: 100vh; 
+}
+
+.blur_bg_Homes, .blur_bg {
+  background-image: url('./assets/bg_main.jpg');
+  background-attachment: fixed;
+  background-size: cover;  
+  background-position: center; 
+  position: fixed;
+  
+
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+
+  filter: blur(400px); 
+}
+
+.about_content, .content {
+  position: relative;
+  z-index: 1; 
+  
+}
+
+/* Стили для самого ползунка */
+input[type="range"] {
+
+  width: 100%; /* Делаем ползунок шириной 100% */
+  height: 1px; /* Высота ползунка */
+  background: #ddd; /* Цвет фон */
+  border-radius: 5px; /* Закругление углов */
+}
+
+input[type="range"]::-moz-range-track {
+  background: #eb2e2e;
+  border-radius: 5px;
+}
