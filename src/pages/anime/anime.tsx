@@ -2,16 +2,12 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { useParams } from "react-router-dom"
-
-type Anime = {
-  id: string;
-  title: { romaji: string };
-  image: string;
-};
+import type { Anime } from '../../types/types'
 
 export function Anime() {
   const { id } = useParams<{ id: string }>();
   const [anime, setAnime] = useState<Anime[]>([]);
+  
   const [animeData, setAnimeData] = useState<Anime | null>(null);
  
   useEffect(() => {
