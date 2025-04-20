@@ -1,10 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-
-type Anime = {
-  id: string;
-  title: { romaji: string };
-  image: string;
-};
+import { Anime } from '../types/types'
 
 class LikesStore {
 	likes: Anime[] = [];
@@ -17,6 +12,6 @@ class LikesStore {
 		this.likes.push(anime)
 	}
 
-}
+} 
 
 export const likes = new LikesStore();

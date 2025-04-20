@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const Copy = ({text: string}) => {
+export const Copy = (text: string) => {
 
 	const [showPopUp, setShowPopUp] = useState(true);
 

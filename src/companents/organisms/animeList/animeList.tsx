@@ -2,19 +2,14 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { likes } from '../../../store/likes'
+import { Anime } from '../../../types/types'
 import { Button } from '../../atoms/button/button'
 import { Load } from '../../atoms/load/load'
 import { Info } from '../../molecules/info/info'
 import likeIcon from './../../../assets/like.png'
 import shareIcon from './../../../assets/share.png'
-
 //
-type Anime = {
-  mal_id: string;
-  title: { romaji: string };
-  image: string;
-};
- 
+
  export function AnimeList(){ 
 
 	const [animeList, setAnimeList] = useState<Anime[]>([]);
