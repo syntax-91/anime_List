@@ -10,4 +10,4 @@ class AuthStore {
 
 }
 
-export const authUser: AuthStore()
+export const authUser: AuthStore = new AuthStore();
