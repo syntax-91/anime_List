@@ -27,25 +27,28 @@ export function Anime() {
   }, [anime]);
 
   return (
-    <div className='bg'>
+    <div className='bg '>
       <div className="blur_bg"></div>
  
-    <div className="content w-[80%] h-[340px] mx-auto pt-[100px] flex">
+    <div className="content w-[100%]  h-[340px] mx-auto pt-[100px] flex ">
       {animeData && (
         <div className=" w-[90vw] mx-auto">
           {" "}
           <div className="flex">
             <div className="img w-[228px] h-[340px]  flex rounded-2xl ">
               <img
-                src={animeData.images.jpg.image_url}
+                
                 alt="ERROR"
                 className="rounded-2xl
+                bg-red-900
+                w-[220px]
 						"
               />
             </div>
 
             <div className=" h-[100%]  mx-[20px] info">
-              <h4 className=" text-[28px]">title: {animeData.title}</h4>
+              <h4 className=" text-[28px]">
+                title: {animeData.title}</h4>
 
               <h4>popularity: {animeData.popularity}</h4>
               <h4>score: {animeData.score}</h4>
