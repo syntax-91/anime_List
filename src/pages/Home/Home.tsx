@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite'
 import { Outlet } from 'react-router-dom'
-import { Wrapper } from '../../companents/molecules/wrapper/wrapper'
-import { AnimeList } from '../../companents/organisms/animeList/animeList'
-import { Header } from '../../companents/organisms/header/header'
-import { InpRes } from '../../companents/organisms/inpRes/inpRes'
+import { Wrapper } from '../../components/molecules/wrapper/wrapper'
+import { AnimeList } from '../../components/organisms/animeList/animeList'
+import { Header } from '../../components/organisms/header/header'
+import { InpRes } from '../../components/organisms/inpRes/inpRes'
 import { bgs } from '../../store/bg/bgStore'
 import { searchRes } from '../../store/searchRes/searchRes'
 import s from './stylesHome.module.css'
@@ -19,12 +19,14 @@ function Home(){
 			<div className={s.blur_bg_Home}></div>
   
 		<div className={s.Home_content}>
+				
 				<Header />   
+				
 			
 			{searchRes.searchRes && <InpRes />} 
 
 				<div className='w-[90%]
-				  mx-auto mt-[20px]'>
+				  mx-auto mt-[200px] '>
 						<Outlet />
 				</div>
 

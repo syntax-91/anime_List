@@ -6,7 +6,7 @@ import { Input } from '../../atoms/input/Input'
 export function SearchHeader(){
 	
 	const [inpData, setInpData] = useState('');
-	const debouncedInpData = useDebounce(inpData, 500)
+	const debouncedInpData = useDebounce(inpData, 20)
 
 	useEffect(() => {
 		

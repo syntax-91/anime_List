@@ -16,31 +16,36 @@ import shareIcon from './../../../assets/share.png'
 	const [load, setLoad] = useState(true);
 	const [copy, setCopy] = useState('');
 
+	const handleLike = (data: Anime) => {likes.setData(data)}
+	const handleNavigate = (id: string) => { nav(`anime/${id}`) }
+	const handleShare = (id: string) =>
+		{setCopy(`https://animelist-red.vercel.app/anime/${id}`)}
+
 	useEffect(() => {
 		if(copy){
 			navigator.clipboard.writeText(copy);
 
-			const t: NodeJS.Timeout = setTimeout(() => setCopy(''), 2000)
+			const t = setTimeout(() => setCopy(''), 2000)
 			return()=> clearTimeout(t)
 		}
 	}, [copy])
 
 
 	useEffect(() => {
-		
-		axios.get('https://api.jikan.moe/v4/top/anime')
-		.then(res => setAnimeList(res.data.data) )
-		console.log(animeList)
-		
+		const fetchAnimeList = async (): Promise<void> => {
+		try {
+			const { data } = await axios.get('https://api.jikan.moe/v4/top/anime')
+			setAnimeList(data.data)
+		} finally {
+			setLoad(false)
+		}
+	}
+
+	fetchAnimeList();
 	}, [])
 	
 
 	const nav = useNavigate();
-	
-	useEffect(() => {
-		if(animeList.length > 0 ){setLoad(false)}
-	}, [animeList])
-
 	
 
 	return(
@@ -59,39 +64,50 @@ import shareIcon from './../../../assets/share.png'
 				{animeList.map(data => (
 					<div
 					
-					className=' w-[220px] relative h-[360px] border border-[#444] m-[10px] rounded-2xl
-					 hup '
+					className=' w-[220px] h-[360px] border border-[#444] m-[10px] rounded-2xl
+					 hup ' 
 					  
 					 key={data.mal_id}>
 
+					{/* like */}
 						<div 
-						onClick={()=>likes.setData(data) }
-						 
+						onClick={()=> handleLike(data) }
+
 						 className='absolute top-5 right-5
 						w-[40px] h-[40px] p-[3px] rounded-[5px]
 						cursor-pointer  blur-white'>
 								<img src={likeIcon} alt="ERROR" />
 						</div>
-						{/**/ }
+						
+						{/* copy */ }
 						<div 
-						 onClick={() => setCopy(`https://animelist-red.vercel.app/anime/${data.mal_id}`) }
+						 onClick={() => handleShare(data.mal_id) }
 						 className='absolute top-5 right-20
 						w-[40px] h-[40px] p-[3px] rounded-[5px]
 						cursor-pointer  blur-white'>
 								<img src={shareIcon} alt="ERROR" />
 						</div>
  
+					{/* IMG */}
 					<div className='
-					
-					 rounded-2xl'>
+					 rounded-2xl '>
+
 						<img className='rounded-[10px] w-full h-[260px]' src={data.images.jpg.image_url} />
 						</div>				
 
+						{/* Title */}
 						<div className='flex justify-center'>
-							<p className='pt-[5px] text-[16px]  truncate  max-w-[90%]'>{data.title}</p>	
+							<p className='pt-[5px] text-[16px]  truncate  max-w-[90%]'>
+								{data.title}</p>	
 						</div>	
 
-						<Button onClick={()=> nav(`anime/${data.mal_id}`) } className='absolute bottom-1 mt-[8px] border border-[#444] w-[95%] py-[10px] rounded-2xl bg-fuchsia-700 cursor-pointer || hover:bg-fuchsia-600' label='Смотреть' position='center' />
+					{/* button */}
+						<Button onClick={()=> handleNavigate(data.mal_id) } 
+						label='Смотреть' position='center' 
+
+						className='absolute bottom-1 mt-[8px] 
+						border border-[#444] w-[95%] py-[10px]
+						 rounded-2xl bg-fuchsia-700 cursor-pointer || hover:bg-fuchsia-600' />
 
 					</div>
 				))}

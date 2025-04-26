@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { useParams } from "react-router-dom"
 import type { Anime } from '../../types/types'
+import AnimeM from './../../../public/anime_Monster.mp4'
 
 export function Anime() {
   const { id } = useParams<{ id: string }>();
@@ -45,25 +46,33 @@ export function Anime() {
               />
             </div>
 
-            <div className=" h-[100%]  mx-[20px] info">
-              <h4 className=" text-[28px]">title: {animeData.title}</h4>
-
-              <h4>popularity: {animeData.popularity}</h4>
-              <h4>score: {animeData.score}</h4>
-              <h4>year: {animeData.year}</h4>
-              <h4>rating: {animeData.rating}</h4>
-              <h4>genres: {animeData.name}</h4>
-              <h4>episodes: {animeData.episodes}</h4>
+            <div className=" h-[100%]  mx-[20px] inf
+            text-[10px] 
+            ">
+              <h4 className=" text-[28px]
+             py-1 ">title: {animeData.title}</h4>
+  
+              <h4 className=" text-[28px]
+              py-3 ">popularity: {animeData.popularity}</h4>
+              <h4 className=" text-[28px]
+             py-3 ">score: {animeData.score}</h4>
+              <h4 className=" text-[28px]
+             py-3 ">year: {animeData.year}</h4>
+              <h4 className=" text-[28px]
+             py-3 ">rating: {animeData.rating}</h4>
+              <h4 className=" text-[28px]
+             py-3 ">genres: {animeData.name}</h4>
+              <h4 className=" text-[28px]
+             py-3 ">episodes: {animeData.episodes}</h4>
             </div>
           </div>
-          <div className="synopsis mt-[20px] w-[90%]">
-            <h2 className="text-[20px]">synopsis: {animeData.synopsis}</h2>
-          </div>
-          <div className="mt-[50px] w-[60%] h-[400px]  mx-auto rounded-2xl">
+          
+          <div className="mt-[50px] w-[100%] h-[400px]  mx-auto rounded-2xl border
+          border-[#444]">
             <ReactPlayer
-              url={animeData.url}
+              url={AnimeM}
               controls
-              width="100%"
+              width="100%" 
               height="100%"
             />
           </div>

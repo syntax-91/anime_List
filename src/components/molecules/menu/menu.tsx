@@ -13,12 +13,15 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
   const nav = useNavigate();
 
   return (
-    <div className=''>
+    <div className='cursor-pointer'>
       <div onClick={() => setIsOpen(true)} >
         <img src={icon_menu} alt="ERROR" />
       </div>
 
       {isOpen && (
+        <div className='fixed left-0 w-[100vw] h-[100vh]
+         z-0'
+        onClick={() => setIsOpen(false) }>
         <div onClick={() => setIsOpen(false)} 
         className='fixed right-8  w-[200px]
         py-[10px] rounded-2xl cursor-pointer fn_sl'>
@@ -72,7 +75,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
           </div>
 
           <div></div>
-        </div>
+        </div></div>
       )}
     </div>
   );

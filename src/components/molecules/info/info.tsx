@@ -4,8 +4,8 @@ export function Info(){
 
 	return(
 		<div className='border border-[#fff]/40
-		fixed top-30 w-[200px] h-[35px] z-99 bg-white/5
-		rounded-2xl opening_info'>
+		fixed top-30 w-[220px] h-[45px] z-99 bg-black/80
+		rounded-2xl opening_info flex justify-center items-center'>
 			
 			<div className='flex justify-between w-[60%] h-[30px]
 			items-center

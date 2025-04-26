@@ -10,8 +10,15 @@ export function Header(){
 
 	return(
 		<header
-		className='w-[90%] flex
-		mx-auto py-[20px] justify-between items-center'>
+		className='w-[100%] fixed
+		top-0
+		flex  z-99 bg-[#000]
+		mx-auto py-[20px] justify-between items-center
+		
+		'>
+
+			<div className="c
+			w-[90%] mx-auto flex items-center"> 
 				
 			<Logo />
 
@@ -21,7 +28,7 @@ export function Header(){
 
 			<Menu 
 			isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
-				 
+				</div>
 		</header>
 	)
 }

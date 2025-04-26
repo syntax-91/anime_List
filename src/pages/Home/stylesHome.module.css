@@ -5,8 +5,7 @@
 } 
 
 .blur_bg_Home {
-	background-image: url('./../../assets/bg_main.jpg');
-  
+	background-color: #000;
   background-size: cover; 
   background-position: center; 
  

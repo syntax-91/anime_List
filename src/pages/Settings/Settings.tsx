@@ -20,25 +20,24 @@ export function Settings() {
 
 			<div 
 			className='border border-[#fff]/30 
-			px-5 py-2 rounded-full h-12'
-			>Оснавные</div>
+			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
+			>Основные</div>
 			
-			<div
-			onClick={()=> nav('custom') }
+			<div 
+			onClick={() => nav('custom') }
 			className='border border-[#fff]/30 
-			px-5 py-2 rounded-full h-12'>кастомизация</div>
+			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
+			>Кастомизация</div>
 
-			<div
+			<div 
 			className='border border-[#fff]/30 
-			px-5 py-2 rounded-full h-12'>
-				text
-			</div>
+			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
+			>Основные</div>
 
-			<div
+			<div 
 			className='border border-[#fff]/30 
-			px-5 py-2 rounded-full h-12'>
-				text
-			</div>
+			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
+			>Основные</div>
 			
 
 		</div>

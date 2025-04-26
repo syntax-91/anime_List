@@ -46,8 +46,15 @@
 }
 
 /* hover: up */
-.hup:hover  {
-  transform: scale(1.1);
+.hup {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.hup:hover, .hup:active {
+  background-color: rgba(180, 174, 174, 0.1);
+  
 }
 
 /* pulse */
