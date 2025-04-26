@@ -20,7 +20,7 @@ function Home(){
   
 		<div className={s.Home_content}>
 				
-				<Header />   
+				<Header />    
 				
 			
 			{searchRes.searchRes && <InpRes />} 
