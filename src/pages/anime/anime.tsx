@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { useParams } from "react-router-dom"
 import type { Anime } from '../../types/types'
-import AnimeM from './../../../public/anime_Monster.mp4'
 
 export function Anime() {
   const { id } = useParams<{ id: string }>();
@@ -70,7 +69,7 @@ export function Anime() {
           <div className="mt-[50px] w-[100%] h-[400px]  mx-auto rounded-2xl border
           border-[#444]">
             <ReactPlayer
-              url={AnimeM}
+              url=''
               controls
               width="100%" 
               height="100%"
