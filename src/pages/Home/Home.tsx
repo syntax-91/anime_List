@@ -26,7 +26,7 @@ function Home(){
 			{searchRes.searchRes && <InpRes />} 
 
 				<div className='w-[90%]
-				  mx-auto mt-[200px] '>
+				  mx-auto mt-[20px] '>
 						<Outlet />
 				</div>
 

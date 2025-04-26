@@ -10,9 +10,8 @@ export function Header(){
 
 	return(
 		<header
-		className='w-[100%] fixed
-		top-0
-		flex  z-99 bg-[#000]
+		className='w-[100%] 
+		flex
 		mx-auto py-[20px] justify-between items-center
 		
 		'>
