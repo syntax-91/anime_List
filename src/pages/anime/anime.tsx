@@ -29,11 +29,11 @@ export function Anime() {
   return (
     <div className='bg'>
       <div className="blur_bg"></div>
- 
+  
     <div className="content w-[80%] h-[340px] mx-auto pt-[100px] flex">
       {animeData && (
         <div className=" w-[90vw] mx-auto">
-          {" "}
+          {" ... "} 
           <div className="block  md:flex">
             <div className="img mx-auto mb-10 md:mb-0 md:mx-0 w-[228px] h-[340px]  flex rounded-2xl ">
               <img
