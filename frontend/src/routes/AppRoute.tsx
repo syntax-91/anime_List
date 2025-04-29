@@ -14,7 +14,7 @@ export function AppRoute(){
 		<BrowserRouter>  
 			<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='likes' element={<Likes />} />
+					<Route path='likes' element={<Likes />} /> 
 					<Route path='/about' element={<About_us />} />
 					<Route path='*' element={<_404 />} />
 					<Route path='/login' element={<Login />} />
