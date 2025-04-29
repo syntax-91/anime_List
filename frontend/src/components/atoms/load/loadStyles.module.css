@@ -1,0 +1,32 @@
+.loadC {
+	width: 100vw;
+	height: 100px;
+	margin-top: 30px;
+
+	display: flex;
+	justify-content: center;
+}
+
+.load {
+	border-top: 1px solid #7c7c7c;
+	border-left: 1px solid #7c7b7c;
+	border-bottom: 1px solid #ededed;
+	border-right: 1px solid #848484;
+
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+
+	animation: w 0.5s linear infinite;
+}
+
+@keyframes w {
+	0% {
+		opacity: 0.8;
+	}
+	
+	100% {
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+}

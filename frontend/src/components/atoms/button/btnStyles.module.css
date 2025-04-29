@@ -1,0 +1,17 @@
+._blueviolet {
+	background-color: #8a2be2;
+	z-index: 100;
+}
+
+.blueviolet:hover {
+	background-color: rgb(138, 43, 226);
+	backdrop-filter: blur(50px);
+}
+
+.positionCenter, .center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ 

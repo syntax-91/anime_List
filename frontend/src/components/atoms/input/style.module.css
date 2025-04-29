@@ -1,0 +1,7 @@
+ .base {
+	background-color: rgba(96, 95, 95, 0.3);
+	backdrop-filter: blur(50px);	
+	@apply px-[30px] rounded-[30px] outline-0
+	ml-[20px] h-[50px] flex-1/5 mx-[20px] 
+	w-[100%]  
+ } 
