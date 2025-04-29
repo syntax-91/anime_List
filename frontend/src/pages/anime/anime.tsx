@@ -9,7 +9,7 @@ export function Anime() {
   const [anime, setAnime] = useState<Anime[]>([]);
   
   const [animeData, setAnimeData] = useState<Anime | null>(null);
- 
+  
   useEffect(() => {
     axios
       .get("https://api.jikan.moe/v4/top/anime")
