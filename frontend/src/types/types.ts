@@ -15,7 +15,7 @@ export type Anime = {
 	synopsis: string;
 	url: string;
 };
-
+ 
 export type UserData = {
 	username: string,
 	password: string

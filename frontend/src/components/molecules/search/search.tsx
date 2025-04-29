@@ -17,6 +17,8 @@ export function SearchHeader(){
 		<Input  
 		onChange={e => setInpData(e.target.value) } 
 		type='text' placholder='Enter search..' 
-		location='left'/>
+		location='left'
+		style='default'
+		className='Hi'/>
 	)
 }  

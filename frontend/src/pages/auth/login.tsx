@@ -5,15 +5,17 @@ import { Button } from '../../components/atoms/button/button'
 import FetchData from '../../res/FetchData'
 import { userNameSchema } from '../../schema'
 import { modalText } from '../../store/modalText'
+import { UserData } from '../../types/types'
 
  function Login(){
 
-	const {
-	register, 
-	handleSubmit,
-formState: {errors, isValid} } = useForm({'mode': 'onChange'})
+		const {
+			register, 
+			handleSubmit,
+			formState: {errors, isValid} } 
+			= useForm<UserData>({'mode': 'onChange'})
 
-		const submit = data => {
+		const submit = (data: UserData) => {
 			FetchData('login', data);
 		}
 
@@ -74,7 +76,7 @@ formState: {errors, isValid} } = useForm({'mode': 'onChange'})
 			</div>
 			{errors.username?.message && 
 			<p className='text-center mt-2
-			text-red-700'>{errors.username.message}</p>}
+			text-red-700'>{String(errors.username.message)}</p>}
 
 				{/* PSW */}
 			<div className='text-center w-[100%]'>
@@ -87,7 +89,7 @@ formState: {errors, isValid} } = useForm({'mode': 'onChange'})
 			</div>
 			{errors.password?.message && 
 			<p className='text-center mt-2
-			text-red-700'>{errors.password.message}</p>}
+			text-red-700'>{String(errors.password.message)}</p>}
 
 			
 			<Button type='submit' style='blueviolet'
