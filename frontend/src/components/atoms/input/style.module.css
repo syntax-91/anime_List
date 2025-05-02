@@ -1,7 +1,21 @@
  .base {
 	background-color: rgba(96, 95, 95, 0.3);
 	backdrop-filter: blur(50px);	
-	@apply px-[30px] rounded-[30px] outline-0
-	md:ml-[20px] h-[50px] flex-1/5 mx-[20px] 
-	w-[100%]  
+	
+	padding: 0px 30px;
+	height: 45px;
+	border-radius: 30px;
+	border: 0;
+	margin: 0px 20px;
+	display: flex;
+	flex: 1/5;
+	width: 100%;
+	outline: 0;
+
  } 
+
+ @media (min-width: 700px){
+	.base {
+		margin-left: 20px;
+	}
+ }
