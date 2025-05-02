@@ -1,7 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import s from './styles.module.css'
 
-export function Settings() {
+export  default function Settings() {
 
 	const nav = useNavigate();
 

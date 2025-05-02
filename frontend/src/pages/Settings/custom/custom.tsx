@@ -1,5 +1,5 @@
 
-export function Custom(){
+export default function Custom(){
 
 	return(
 		<div className='border border-white/40 w-[100%] 

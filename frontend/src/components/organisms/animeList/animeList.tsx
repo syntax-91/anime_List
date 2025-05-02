@@ -65,7 +65,7 @@ import shareIcon from './../../../assets/share.png'
 					<div
 					
 					className=' w-[220px] h-[360px] border border-[#444] m-[10px] rounded-2xl
-					 hup hover:scale-105' 
+					 hup hover:scale-105 duration-700' 
 					  
 					 key={data.mal_id}>
 

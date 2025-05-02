@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/atoms/button/button'
 import FetchData from '../../res/FetchData'
 import { userNameSchema } from '../../schema'
@@ -8,6 +9,8 @@ import { modalText } from '../../store/modalText'
 import { UserData } from '../../types/types'
 
  function Login(){
+
+	const nav = useNavigate();
 
 		const {
 			register, 
@@ -40,6 +43,12 @@ import { UserData } from '../../types/types'
 				<div 
 				className='m w-[100%] h-30'>
 					
+					<div 
+					onClick={() => nav("/") }
+					className='block sm:hidden m-10'>
+						<h3>назад</h3>
+					</div>
+
 					{modalText.isOpen &&
 					<div
 					 className={`w-[290px]
@@ -51,25 +60,27 @@ import { UserData } from '../../types/types'
 
 				</div>
 
+
 				<div 
 				className='c w-[100%] h-[80vh] 
 				flex justify-center items-center'>
 
 			<form onSubmit={handleSubmit(submit)}
-			className='w-[450px] 
-			h-[400px]
-			rounded-2xl border border-[#444]'>
+			className='w-[80%] 
+			h-[400px] sm:w-[450px] border-0
+			rounded-2xl sm:border sm:border-[#444]'>
 
 				<h2 
 				className='text-[30px]
-				text-center mt-18	'>
+				text-center sm:mt-18	'>
 				Login</h2>
 
 				{/* Username */}			
 			<div className='text-center w-[100%]'>
 				<input type="text"
 				placeholder='Enter username'
-				className='w-[80%] h-[50px]
+				className='w-[100%] h-[50px]
+				sm:w-[80%]
 				px-10 rounded-3xl outline-0 mt-8
 				 mx-auto border border-[#444]'  
 				 {...register('username', userNameSchema) }/>
@@ -82,7 +93,8 @@ import { UserData } from '../../types/types'
 			<div className='text-center w-[100%]'>
 				<input type="text"
 				placeholder='Enter password'
-				className='w-[80%] h-[50px]
+				className='w-[100%] h-[50px]
+				sm:w-[80%]
 				px-10 rounded-3xl outline-0 mt-5
 				 mx-auto border border-[#444]'  
 				 {...register('password', userNameSchema) }/>

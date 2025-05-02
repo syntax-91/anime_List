@@ -14,7 +14,7 @@ export const Menu = observer(
   const nav = useNavigate();
 
   return (
-    <div>
+    <div> 
       
       <div onClick={() => setIsOpen(true)} >
         <img src={icon_menu} alt="ERROR" />
@@ -25,7 +25,8 @@ export const Menu = observer(
         /* OB */
         <div onClick={()=> setIsOpen(false)}
         className='fixed right-8  w-[200px]
-        py-[10px] rounded-2xl cursor-pointer fn_sl'>
+        py-[10px] rounded-2xl cursor-pointer 
+        bg-[rgba(0,0,0,0.2)]/40 z-10'>
           
           {/* options */}
 
@@ -88,11 +89,12 @@ export const Menu = observer(
 
           {/* back */}
 
-          <div className="w-[100%] mx-auto h-[40px]  {elm	flex justify-center items-center
-          rounded-b-2xl">
-            <h3 className="text-[18px] ">back</h3>
+          <div className="w-[100%] mx-auto h-[40px] elm	flex justify-center items-center">
+            <h3 className="text-[18px] ">
+              Back
+            </h3>
           </div>
-
+           
           <div></div>
          </div>}
       </div>

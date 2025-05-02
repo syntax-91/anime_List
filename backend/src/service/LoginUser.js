@@ -25,7 +25,8 @@ export async function LoginUser(data){
 			const psw = data.password;
 			const hashPsw = await hash(psw, 10)
 			
-			const pswValid = await compare(user.password, hashPsw);
+			const pswValid = await compare(psw, user.password);
+
 			console.log('userDATADB: ', user.password,
 				'userPSW: ', hashPsw
 			)
@@ -36,10 +37,10 @@ export async function LoginUser(data){
 			} 
 		}
 		console.log('неправильные данные')
-		return {success: false, message: 'неправильные данные'}
+		return {success:  false, message: 'неправильные данные'}
 		
 
 	} finally {
-		client.close()
+		console.log('БД ещё не закрылся..')
 	}
 }

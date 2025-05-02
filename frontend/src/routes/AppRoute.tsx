@@ -1,14 +1,22 @@
+import React, { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Load } from '../components/atoms/load/load'
 import { _404 } from '../pages/404/404'
-import { About_us } from '../pages/AboutUS/About_us'
 import { Anime } from '../pages/anime/anime'
-import Login from '../pages/auth/login'
 import Home from '../pages/Home/Home'
 import { Likes } from '../pages/Home/like/likes'
-import { Custom } from '../pages/Settings/cursom/custom'
-import { Settings } from '../pages/Settings/Settings'
 
-export function AppRoute(){
+
+//lazy loading
+const About = React.lazy(() => import('./../pages/AboutUS/About_us') )
+
+const Login = React.lazy(() => import('../pages/auth/login') )
+
+const Settings = React.lazy(() => import('./../pages/Settings/Settings') )
+
+const Custom = React.lazy(() => import('../pages/Settings/custom/custom') )
+ 
+export function AppRoute(){ 
 
 
 	return (
@@ -18,13 +26,38 @@ export function AppRoute(){
 						<Route path='likes' element={<Likes />} /> 
 					</Route>
 					
-					<Route path='/about' element={<About_us />} />
-					<Route path='*' element={<_404 />} />
-					<Route path='/login' element={<Login />} />
 					
-					<Route path='/settings' element={<Settings />}>
+						<Route path='/about' element={
+							<Suspense fallback={<Load />}>
+								<About />
+							</Suspense>
+							} />
+					
+
+					<Route path='*' element={<_404 />} />
+
+					<Route path='/login' element={
+							<Suspense fallback={<Load />}>
+								<Login />
+							</Suspense>
+							} />
+
+						<Route path='/settings' element={
+							<Suspense fallback={<Load />}>
+								<Settings />
+							</Suspense>
+							} >
+
+						<Route path='custom' element={
+							<Suspense fallback={<Load />}>
+								<Custom />
+							</Suspense>
+							} />
+								
+							</Route>
+					
 						<Route path='custom' element={<Custom/ >} />
-					</Route>
+					
 
 					<Route path='/anime/:id' element={<Anime />} />
 					

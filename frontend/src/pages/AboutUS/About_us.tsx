@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import tg_icon from './../../assets/tg.jpg'
 
-export function About_us() {
+export default function About_us() {
 
 	const nav = useNavigate();
 
@@ -14,7 +14,7 @@ export function About_us() {
 
 			<div
 		 className='container about_content  w-[100vw]
-		  h-[100vh] mx-auto z-100'>
+		  h-[100vh] mx-auto z-100 m-10 '>
 
 
 		<div className='m-5'>

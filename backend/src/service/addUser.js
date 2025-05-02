@@ -1,4 +1,4 @@
-import { compare, hash } from 'bcryptjs'
+import { hash } from 'bcryptjs'
 import { config } from 'dotenv'
 import { MongoClient } from 'mongodb'
 
@@ -18,16 +18,17 @@ export async function AddUser(data){
 			return {success: false, message: 'Уже существует!'}
 		}
 		const HashPsw = await hash(data.password, 10)
-		const pswValid = compare(HashPsw, user.password);
 
-		if(pswValid){
-			return {success: true, message: 'Успешно!'}
-		} else {
-			return {success: false, message: 'Неверные данные!'}
-		}
+		users.insertOne({
+			username: data.username,
+			password: HashPsw
+		})
+
+		return {success: true, message: 'Успешно!'}
+
 
 	} finally {
-		client.close();
+		console.log('БД ещё не закрылся..')
 	}
 
 }
