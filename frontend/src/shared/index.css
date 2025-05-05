@@ -95,7 +95,13 @@ h4 {
   font-size: 25px;
 }
 
- 
+ .br10t {
+  border-radius: 10px 0px 10px 0px;
+ }
+
+ .br10b {
+  border-radius: 0px 0px 10px 10px;
+ }
 
 .elm {
   background-color: rgba(0,0,0, 0.2);
@@ -227,3 +233,4 @@ input:focus {
     transform: scaleY(1);
   }
 }
+

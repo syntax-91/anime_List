@@ -15,6 +15,8 @@ const Login = React.lazy(() => import('../pages/auth/login') )
 const Settings = React.lazy(() => import('./../pages/Settings/Settings') )
 
 const Custom = React.lazy(() => import('../pages/Settings/custom/custom') )
+
+const Profile = React.lazy(() => import('./../pages/Profile/Profile') )
  
 export function AppRoute(){ 
 
@@ -53,6 +55,12 @@ export function AppRoute(){
 								<Custom />
 							</Suspense>
 							} />
+
+						<Route path='profile' element={
+							<Suspense fallback={<Load />}>
+									<Profile />
+							</Suspense>
+						} />
 								
 							</Route>
 					

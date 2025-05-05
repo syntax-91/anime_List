@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { useParams } from "react-router-dom"
-import type { Anime } from '../../types/types'
+import type { Anime } from '../../shared/types/types'
 
 export function Anime() {
   const { id } = useParams<{ id: string }>();

@@ -1,12 +1,18 @@
-import { searchRes } from '../../../store/searchRes/searchRes'
+import { motion } from 'framer-motion'
+import { searchRes } from '../../../shared/store/searchRes/searchRes'
 import { Info } from '../../molecules/info/info'
-
 
 export function InpRes(){
 
 
 	return(
-		<div 
+		<motion.div
+		initial={{ y: -40, opacity: 0 }}
+		animate={{ y: 20, opacity: 1 }}
+		transition={{ duration: 0.1, delay: 0,
+			ease: 'backIn'
+		 }}
+
 		className=' animate-pulse w-[90%] h-80  border
 		 border-[#fff]/20 md:w-[70%]
 		rounded-4xl mx-auto font-stretch-extra-expanded
@@ -25,6 +31,6 @@ export function InpRes(){
 				</h3>
 				</div>
 
-		</div>
+		</motion.div>
 	)
 }

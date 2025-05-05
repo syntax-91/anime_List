@@ -29,7 +29,7 @@ export function Input(
 	console.info('INPDATA: ', rest.value)
 	return(
 		<div style={{textAlign: location}}
-		className='flex-1/2 flex justify-center  md:ml-20' >
+		className='flex-1/2 flex justify-center  md:ml-0' >
 		<input 
 		className={`${!rest.className && rest.style
 			? s[rest.style] : s.base

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDebounce } from '../../../lib/useDebounce'
-import { searchRes } from '../../../store/searchRes/searchRes'
+import { searchRes } from '../../../shared/store/searchRes/searchRes'
 import { Input } from '../../atoms/input/Input'
 
 export function SearchHeader(){

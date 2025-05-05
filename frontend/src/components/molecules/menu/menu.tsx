@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import { observer } from "mobx-react-lite"
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { authUser } from '../../../store/authStore'
+import { authUser } from '../../../shared/store/authStore'
 import icon_menu from "./../../../assets/icon_menu.png"
 
 type MenuProps = {
@@ -16,15 +17,22 @@ export const Menu = observer(
   return (
     <div> 
       
-      <div onClick={() => setIsOpen(true)} >
+      <div onClick={() => setIsOpen(true)} 
+        className='cursor-pointer'>
         <img src={icon_menu} alt="ERROR" />
       </div> 
 
       {isOpen && 
         
         /* OB */
-        <div onClick={()=> setIsOpen(false)}
-        className='fixed right-8  w-[200px]
+        <motion.div
+        
+        initial={{ x: -40 }}
+		    animate={{ x: 0 }}
+        transition={{ duration: 0.1, delay: 0 }}
+
+        onClick={()=> setIsOpen(false)}
+        className='fixed right-8 elm  w-[200px]
         py-[10px] rounded-2xl cursor-pointer 
         bg-[rgba(0,0,0,0.2)]/40 z-10'>
           
@@ -35,8 +43,8 @@ export const Menu = observer(
         {authUser.isAuth && 
           <div onClick={() => nav("/settings/profile")}
           className="w-[100%] mx-auto 
-           h-[40px] rounded-t-2xl
-            elm	flex justify-center items-center ">
+           h-[40px] rounded-t-2xl br10t
+            	flex justify-center items-center ">
            
            <h3
              className="text-[18px] "
@@ -50,7 +58,7 @@ export const Menu = observer(
           <div onClick={() => nav("/login")}
           className="w-[100%] mx-auto 
            h-[40px] rounded-t-2xl
-            elm	flex justify-center items-center ">
+            	flex justify-center items-center ">
            
            <h3
              className="text-[18px] "
@@ -64,7 +72,7 @@ export const Menu = observer(
           {/* settings */}
 
           <div onClick={() => nav("/settings")}
-           className="w-[100%] mx-auto  h-[40px]   elm	flex justify-center items-center">
+           className="w-[100%] mx-auto  h-[40px]   	flex justify-center items-center">
             <h3 className="text-[18px] ">
               Settings
             </h3>
@@ -73,7 +81,7 @@ export const Menu = observer(
           {/* likes */}
 
           <div onClick={() => nav("/likes")}
-           className="w-[100%] mx-auto  h-[40px]  elm	flex justify-center items-center">
+           className="w-[100%] mx-auto  h-[40px]  flex justify-center items-center">
             <h3 className="text-[18px] ">
               Likes
             </h3>
@@ -81,7 +89,7 @@ export const Menu = observer(
 
           {/* About */}
 
-          <div onClick={() => nav("/about")} className="w-[100%] mx-auto h-[40px] elm	flex justify-center items-center">
+          <div onClick={() => nav("/about")} className="w-[100%] mx-auto h-[40px] flex justify-center items-center">
             <h3 className="text-[18px] ">
               About
             </h3>
@@ -89,14 +97,14 @@ export const Menu = observer(
 
           {/* back */}
 
-          <div className="w-[100%] mx-auto h-[40px] elm	flex justify-center items-center">
+          <div className="w-[100%] mx-auto h-[40px] 	flex justify-center items-center br10b">
             <h3 className="text-[18px] ">
               Back
             </h3>
           </div>
            
           <div></div>
-         </div>}
+         </motion.div>}
       </div>
       );
 })

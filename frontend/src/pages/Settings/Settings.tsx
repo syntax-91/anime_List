@@ -30,9 +30,10 @@ export  default function Settings() {
 			>Кастомизация</div>
 
 			<div 
+			onClick={() => nav('profile') }
 			className='border border-[#fff]/30 
 			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
-			>Основные</div>
+			>Профиль</div>
 
 			<div 
 			className='border border-[#fff]/30 

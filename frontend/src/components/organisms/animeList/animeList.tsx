@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { likes } from '../../../store/likes'
-import { Anime } from '../../../types/types'
+import { likes } from '../../../shared/store/likes'
+import { Anime } from '../../../shared/types/types'
 import { Button } from '../../atoms/button/button'
 import { Load } from '../../atoms/load/load'
 import { Info } from '../../molecules/info/info'
@@ -65,7 +65,10 @@ import shareIcon from './../../../assets/share.png'
 					<div
 					
 					className=' w-[220px] h-[360px] border border-[#444] m-[10px] rounded-2xl
-					 hup hover:scale-105 duration-700' 
+					 hup hover:scale-105 duration-700 ||
+					 active:ml-10' 
+
+					 onClick={()=> handleNavigate(data.mal_id)}
 					  
 					 key={data.mal_id}>
 
@@ -92,22 +95,31 @@ import shareIcon from './../../../assets/share.png'
 					<div className='
 					 rounded-2xl '>
 
-						<img className='rounded-[10px] w-full h-[260px]' src={data.images.jpg.image_url} />
+						<img className='rounded-[10px] w-full h-[305px] sm:w-[290px]' src={data.images.jpg.image_url} />
 						</div>				
 
 						{/* Title */}
 						<div className='flex justify-center'>
-							<p className='pt-[15px] text-[16px]  truncate  max-w-[90%]'>
+							<p className='pt-[15px] sm:pt-[15px] text-[16px]  truncate  max-w-[90%]'>
 								{data.title}</p>	
 						</div>	
 
+
 					{/* button */}
+					<div 
+					className='hidden sm:block'>
 						<Button onClick={()=> handleNavigate(data.mal_id) } 
 						label='Смотреть' position='center' 
 
-						className='absolute bottom-1 mt-[8px] 
+						className='hidden
+						absolute bottom-1 mt-[8px] 
 						border border-[#444] w-[95%] py-[10px]
-						 rounded-2xl bg-fuchsia-700 cursor-pointer || hover:bg-fuchsia-600' />
+						 rounded-2xl bg-fuchsia-700 
+						  sm:block
+						 cursor-pointer || hover:bg-fuchsia-600
+						 active:bg-fuchsia-600' />
+						 </div>
+
 
 					</div>
 				))}

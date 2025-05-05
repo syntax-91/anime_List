@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/atoms/button/button'
 import FetchData from '../../res/FetchData'
-import { userNameSchema } from '../../schema'
-import { modalText } from '../../store/modalText'
-import { UserData } from '../../types/types'
+import { userNameSchema } from '../../shared/schema'
+import { modalText } from '../../shared/store/modalText'
+import { UserData } from '../../shared/types/types'
 
  function Login(){
 

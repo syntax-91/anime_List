@@ -2,7 +2,7 @@ import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../../components/atoms/button/button'
-import { likes } from '../../../store/likes'
+import { likes } from './../../../shared/store/likes'
 
 
  

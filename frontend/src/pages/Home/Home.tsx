@@ -4,8 +4,8 @@ import { Wrapper } from '../../components/molecules/wrapper/wrapper'
 import { AnimeList } from '../../components/organisms/animeList/animeList'
 import { Header } from '../../components/organisms/header/header'
 import { InpRes } from '../../components/organisms/inpRes/inpRes'
-import { bgs } from '../../store/bg/bgStore'
-import { searchRes } from '../../store/searchRes/searchRes'
+import { bgs } from '../../shared/store/bg/bgStore'
+import { searchRes } from '../../shared/store/searchRes/searchRes'
 import s from './stylesHome.module.css'
 
 
