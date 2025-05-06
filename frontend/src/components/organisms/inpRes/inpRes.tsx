@@ -7,8 +7,8 @@ export function InpRes(){
 
 	return(
 		<motion.div
-		initial={{ y: -40, opacity: 0 }}
-		animate={{ y: 20, opacity: 1 }}
+		initial={{ y: -20, opacity: 0 }}
+		animate={{ y: 0, opacity: 1 }}
 		transition={{ duration: 0.1, delay: 0,
 			ease: 'backIn'
 		 }}

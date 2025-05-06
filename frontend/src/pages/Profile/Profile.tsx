@@ -3,9 +3,9 @@ export default function Profile () {
 	console.log('Profile')
 
 	return(
-		<div className='w-[80%] h-100 border 
+		<div className='sm:w-[80%] h-100 md:border 
 		border-[#444]/90 rounded-2xl
-		mx-auto'>
+		mx-auto border-0 w-[100%] '>
 			<h2 className='py-5 px-8'>Профиль</h2>
 
 			<div className=' w-100 h-80
