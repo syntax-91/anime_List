@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { observer } from "mobx-react-lite"
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import { logOut } from '../../../lib/LogOut'
 import { authUser } from '../../../shared/store/authStore'
 import icon_menu from "./../../../assets/icon_menu.png"
 
@@ -19,7 +20,9 @@ export const Menu = observer(
       
       <div onClick={() => setIsOpen(true)} 
         className='cursor-pointer'>
-        <img src={icon_menu} alt="ERROR" />
+        <img 
+        className={`${isOpen ? 'deg360' : 'deg0'}`}
+        src={icon_menu} alt="ERROR" />
       </div> 
 
       {isOpen && 
@@ -38,20 +41,6 @@ export const Menu = observer(
           
           {/* options */}
 
-
-        {/* profile */}
-        {authUser.isAuth && 
-          <div onClick={() => nav("/settings/profile")}
-          className="w-[100%] mx-auto 
-           h-[40px] rounded-t-2xl br10t
-            	flex justify-center items-center ">
-           
-           <h3
-             className="text-[18px] "
-           >
-             Profile
-           </h3>
-         </div>}
 
          {/* Auth */}
          {!authUser.isAuth && 
@@ -94,6 +83,21 @@ export const Menu = observer(
               About
             </h3>
           </div>
+
+          {/* LogOut */}
+
+          {authUser.isAuth && 
+          <div onClick={logOut}
+          className="w-[100%] mx-auto 
+           h-[40px] rounded-t-2xl br10t
+            	flex justify-center items-center ">
+           
+           <h3
+             className="text-[18px] "
+           >
+             LogOut
+           </h3>
+         </div>}
 
           {/* back */}
 

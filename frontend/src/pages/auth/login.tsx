@@ -50,7 +50,7 @@ import { UserData } from '../../shared/types/types'
 					</div>
 
 					{modalText.isOpen &&
-					<div
+					<div 
 					 className={`w-[290px]
 					 h-23 mx-10 my-5 border
 					${modalText.success ? 'success' : 'success_false'}

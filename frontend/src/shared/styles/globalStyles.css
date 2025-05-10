@@ -4,3 +4,27 @@
   height: 8px;
   border-radius: 50%;
 }
+
+.deg360 {
+  transition: all 0.3s ease;
+  animation: ww 0.8s ease forwards;
+}
+
+@keyframes ww {
+ 
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.deg0 {
+  transition: all 0.3s ease;
+  animation: www 0.8s ease forwards;
+}
+
+@keyframes www {
+ 
+  100% {
+    transform: rotate(-180deg);
+  }
+}

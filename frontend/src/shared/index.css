@@ -188,7 +188,7 @@ input:focus {
   border: 1px solid #444;
   border-radius: 20px;
   font-family: 'Courier New', Courier, monospace;
-  animation: ww 0.3s ease;
+  animation: wwh 0.3s ease;
 }
 
 
@@ -200,7 +200,7 @@ input:focus {
   border: 0px;
   border-radius: 20px;
   font-family: monospace;
-  animation: ww 0.3s ease;
+  animation: wwh 0.3s ease;
   position: relative;
 }
 

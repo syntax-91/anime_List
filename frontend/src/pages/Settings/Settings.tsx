@@ -1,4 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom'
+import { authUser } from '../../shared/store/authStore'
 import s from './styles.module.css'
 
 export  default function Settings() {
@@ -29,11 +30,12 @@ export  default function Settings() {
 			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
 			>Кастомизация</div>
 
+			{authUser.isAuth && 
 			<div 
 			onClick={() => nav('profile') }
 			className='border border-[#fff]/30 
 			px-5 py-2 rounded-full h-12 flex justify-center items-center cursor-pointer hover:bg-white/10'
-			>Профиль</div>
+			>Профиль</div>}
 
 			<div 
 			className='border border-[#fff]/30 

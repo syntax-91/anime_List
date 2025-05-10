@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { useParams } from "react-router-dom"
+import { Comments } from '../../components/organisms/animeComments/Comments'
 import type { Anime } from '../../shared/types/types'
 
 export function Anime() {
@@ -27,7 +28,8 @@ export function Anime() {
   }, [anime]);
 
   return (
-    <div className='bg'>
+    <>
+    <div className='bg h-[100vh]'>
       <div className="blur_bg"></div>
   
     <div className="content w-[80%] h-[340px] mx-auto pt-[100px] flex">
@@ -61,7 +63,7 @@ export function Anime() {
              py-3 ">rating: {animeData.rating}</h4>
               <h4 className=" text-[28px]
              py-3 ">genres: {animeData.name}</h4>
-              <h4 className=" text-[28px]
+               <h4 className=" text-[28px]
              py-3 ">episodes: {animeData.episodes}</h4>
             </div>
           </div>
@@ -80,5 +82,12 @@ export function Anime() {
     </div>
 
     </div>
+    
+    <div
+    className=' w-[90%] mt-50 mx-auto mb-10'>
+        <Comments />
+    </div>
+
+    </>
   );
 }

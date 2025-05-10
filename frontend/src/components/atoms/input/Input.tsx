@@ -25,8 +25,8 @@ export function Input(
 			rest.onChange(e)
 		}
 	}	
- 
-	console.info('INPDATA: ', rest.value)
+
+
 	return(
 		<div style={{textAlign: location}}
 		className='flex-1/2 flex justify-center  md:ml-0' >

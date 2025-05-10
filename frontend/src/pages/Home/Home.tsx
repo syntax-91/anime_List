@@ -34,7 +34,9 @@ function Home(){
 				<Wrapper />
 
 				<AnimeList />
+				
 				</div>
+				
 	</div>
 	)
 }
