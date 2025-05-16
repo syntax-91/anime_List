@@ -1,33 +1,32 @@
-import { useState } from 'react'
+import { gsap } from 'gsap/gsap-core'
+import { useEffect, useRef, useState } from 'react'
 import { Logo } from '../../molecules/logo/logo'
 import { Menu } from '../../molecules/menu/menu'
 import { SearchHeader } from '../../molecules/search/search'
 import { Nav } from '../nav/nav'
 
-export function Header(){
+export function Header() {
+	const [isOpenMenu, setIsOpenMenu] = useState(false)
+	const boxRef = useRef(null)
 
-	const [isOpenMenu, setIsOpenMenu] = useState(false);
+	useEffect(() => {
+		gsap.fromTo(boxRef.current, { x: -40, opacity: 0 }, { opacity: 1, x: 0 })
+	}, [])
 
-	return(
-		
-		  <div>
+	return (
 		<header
-		className='w-[90%] 
-		flex py-[25px] o0o1
-		mx-auto justify-between items-center
-		
-		'>
-	
+			ref={boxRef}
+			className='w-[90%] 
+		flex py-[25px]  scale-40
+		mx-auto justify-between items-center'
+		>
 			<Logo />
 
 			<SearchHeader />
-			
+
 			<Nav />
 
-			<Menu 
-			isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
-				
+			<Menu isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
 		</header>
-		</div>
 	)
 }
