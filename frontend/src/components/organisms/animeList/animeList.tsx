@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { animeListStore } from '../../../shared/store/animeLIst/animeList'
 import { Anime } from '../../../shared/types/types'
 import { Button } from '../../atoms/button/button'
 import { Load } from '../../atoms/load/load'
@@ -14,6 +13,8 @@ import shareIcon from './../../../assets/share.png'
 
 export function AnimeList() {
 	gsap.registerPlugin(ScrollTrigger)
+	const nav = useNavigate()
+
 	//
 	const [animeList, setAnimeList] = useState<Anime[]>([])
 	const [load, setLoad] = useState(true)
@@ -23,8 +24,9 @@ export function AnimeList() {
 	useEffect(() => {
 		const fetchAnimeList = async (): Promise<void> => {
 			try {
-				const { data } = await axios.get('https://api.jikan.moe/v4/top/anime')
-				console.log('ANIME_LIST: ', animeListStore)
+				const { data } = await axios.get<{ data: Anime[] }>(
+					'https://api.jikan.moe/v4/top/anime'
+				)
 				setAnimeList(data.data)
 			} finally {
 				setLoad(false)
@@ -34,16 +36,14 @@ export function AnimeList() {
 		fetchAnimeList()
 	}, [])
 
-	const nav = useNavigate()
-
 	const handleLike = (data: Anime) => {
-		setCopy(`http:example.com/anime/${data}`)
+		setCopy(`http:example.com/anime/${data.mal_id}`)
 	}
 	const handleNavigate = (id: string) => {
 		nav(`anime/${id}`)
 	}
 	const handleShare = (id: string) => {
-		setCopy(`https://animelist-red.vercel.app/anime/${id}`)
+		setCopy(`https://example.vercel.app/anime/${id}`)
 	}
 
 	useEffect(() => {

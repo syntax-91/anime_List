@@ -1,108 +1,107 @@
-import { motion } from "framer-motion";
-import { observer } from "mobx-react-lite";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { logOut } from "../../../lib/LogOut";
-import { authUser } from "../../../shared/store/authStore";
-import icon_menu from "./../../../assets/icon_menu.png";
+import { observer } from 'mobx-react-lite'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { logOut } from '../../../lib/LogOut'
+import { authUser } from '../../../shared/store/authStore'
+import icon_menu from './../../../assets/icon_menu.png'
 
 type MenuProps = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+	isOpen: boolean
+	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
-  const nav = useNavigate();
+	const nav = useNavigate()
 
-  const handleClickIcon = () => {
-    if (isOpen) {
-      setIsOpen(false);
-    } else {
-      setIsOpen(true);
-    }
-  };
+	const handleClickIcon = () => {
+		if (isOpen) {
+			setIsOpen(false)
+		} else {
+			setIsOpen(true)
+		}
+	}
 
-  return (
-    <div>
-      <div onClick={handleClickIcon} className="cursor-pointer">
-        <img
-          className={`${isOpen ? "deg360" : "deg0"}`}
-          src={icon_menu}
-          alt="ERROR"
-        />
-      </div>
+	return (
+		<div>
+			<div onClick={handleClickIcon} className='cursor-pointer'>
+				<img
+					className={`${isOpen ? 'deg360' : 'deg0'}`}
+					src={icon_menu}
+					alt='ERROR'
+				/>
+			</div>
 
-      {isOpen && (
-        /* OB */
-        <div
-          onClick={() => setIsOpen(false)}
-          className="fixed right-8 elm  w-[200px]
+			{isOpen && (
+				/* OB */
+				<div
+					onClick={() => setIsOpen(false)}
+					className='fixed right-8 elm  w-[200px]
         py-[10px] rounded-2xl cursor-pointer
-        bg-[rgba(0,0,0,0.2)]/40 z-10 fn_sl"
-        >
-          {/* options */}
+        bg-[rgba(0,0,0,0.2)]/40 z-10 fn_sl'
+				>
+					{/* options */}
 
-          {/* Auth */}
-          {!authUser.isAuth && (
-            <div
-              onClick={() => nav("/login")}
-              className="w-[100%] mx-auto
+					{/* Auth */}
+					{!authUser.isAuth && (
+						<div
+							onClick={() => nav('/login')}
+							className='w-[100%] mx-auto
            h-[40px] rounded-t-2xl
-            	flex justify-center items-center "
-            >
-              <h3 className="text-[18px] ">Auth</h3>
-            </div>
-          )}
+            	flex justify-center items-center '
+						>
+							<h3 className='text-[18px] '>Auth</h3>
+						</div>
+					)}
 
-          {/* settings */}
+					{/* settings */}
 
-          <div
-            onClick={() => nav("/settings")}
-            className="w-[100%] mx-auto  h-[40px]   	flex justify-center items-center"
-          >
-            <h3 className="text-[18px] ">Settings</h3>
-          </div>
+					<div
+						onClick={() => nav('/settings')}
+						className='w-[100%] mx-auto  h-[40px]   	flex justify-center items-center'
+					>
+						<h3 className='text-[18px] '>Settings</h3>
+					</div>
 
-          {/* likes */}
+					{/* likes */}
 
-          <div
-            onClick={() => nav("/likes")}
-            className="w-[100%] mx-auto  h-[40px]  flex justify-center items-center"
-          >
-            <h3 className="text-[18px] ">Likes</h3>
-          </div>
+					<div
+						onClick={() => nav('/likes')}
+						className='w-[100%] mx-auto  h-[40px]  flex justify-center items-center'
+					>
+						<h3 className='text-[18px] '>Likes</h3>
+					</div>
 
-          {/* About */}
+					{/* About */}
 
-          <div
-            onClick={() => nav("/about")}
-            className="w-[100%] mx-auto h-[40px] flex justify-center items-center"
-          >
-            <h3 className="text-[18px] ">About</h3>
-          </div>
+					<div
+						onClick={() => nav('/about')}
+						className='w-[100%] mx-auto h-[40px] flex justify-center items-center'
+					>
+						<h3 className='text-[18px] '>About</h3>
+					</div>
 
-          {/* LogOut */}
+					{/* LogOut */}
 
-          {authUser.isAuth && (
-            <div
-              onClick={logOut}
-              className="w-[100%] mx-auto
+					{authUser.isAuth && (
+						<div
+							onClick={logOut}
+							className='w-[100%] mx-auto
            h-[40px] rounded-t-2xl br10t
-            	flex justify-center items-center "
-            >
-              <h3 className="text-[18px] ">LogOut</h3>
-            </div>
-          )}
+            	flex justify-center items-center '
+						>
+							<h3 className='text-[18px] '>LogOut</h3>
+						</div>
+					)}
 
-          {/* back */}
+					{/* back */}
 
-          <div className="w-[100%] mx-auto h-[40px] 	flex justify-center items-center br10b">
-            <h3 className="text-[18px] ">Back</h3>
-          </div>
+					<div className='w-[100%] mx-auto h-[40px] 	flex justify-center items-center br10b'>
+						<h3 className='text-[18px] '>Back</h3>
+					</div>
 
-          <div></div>
-        </div>
-      )}
-    </div>
-  );
-});
+					<div></div>
+				</div>
+			)}
+		</div>
+	)
+})
