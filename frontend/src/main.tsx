@@ -6,8 +6,7 @@ import './shared/styles/animations.css'
 import './shared/styles/globalStyles.css'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+	<StrictMode>
+		<App />
+	</StrictMode>
 )
- 

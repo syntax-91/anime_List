@@ -12,8 +12,11 @@ import shareIcon from './../../../assets/share.png'
 //
 
 export function AnimeList() {
-	gsap.registerPlugin(ScrollTrigger)
 	const nav = useNavigate()
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger)
+	}, [])
 
 	//
 	const [animeList, setAnimeList] = useState<Anime[]>([])
@@ -21,19 +24,12 @@ export function AnimeList() {
 	const [copy, setCopy] = useState('')
 	const animeBoxesRef = useRef<(HTMLDivElement | null)[]>([])
 
+	//fetchAnime
 	useEffect(() => {
-		const fetchAnimeList = async (): Promise<void> => {
-			try {
-				const { data } = await axios.get<{ data: Anime[] }>(
-					'https://api.jikan.moe/v4/top/anime'
-				)
-				setAnimeList(data.data)
-			} finally {
-				setLoad(false)
-			}
-		}
-
-		fetchAnimeList()
+		axios.get('https://api.jikan.moe/v4/top/anime').then(d => {
+			setAnimeList(d.data.data)
+			setLoad(false)
+		})
 	}, [])
 
 	const handleLike = (data: Anime) => {
@@ -68,7 +64,7 @@ export function AnimeList() {
 					//
 					scrollTrigger: {
 						trigger: el,
-						start: 'top 80%',
+						start: 'top 90%',
 						toggleActions: 'play none none none',
 					},
 				}
