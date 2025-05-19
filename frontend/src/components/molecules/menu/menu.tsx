@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite'
 import React from 'react'
+import { FiMenu } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../../lib/LogOut'
 import { authUser } from '../../../shared/store/authStore'
-import icon_menu from './../../../assets/icon_menu.png'
 
 type MenuProps = {
 	isOpen: boolean
@@ -23,12 +23,11 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 
 	return (
 		<div>
-			<div onClick={handleClickIcon} className='cursor-pointer'>
-				<img
-					className={`${isOpen ? 'deg360' : 'deg0'}`}
-					src={icon_menu}
-					alt='ERROR'
-				/>
+			<div
+				onClick={handleClickIcon}
+				className={`cursor-pointer ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+			>
+				<FiMenu size={30} />
 			</div>
 
 			{isOpen && (

@@ -1,39 +1,45 @@
-import axios from 'axios'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { useEffect, useRef, useState } from 'react'
+import { observer } from 'mobx-react-lite'
+import { RefObject, useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { useNavigate } from 'react-router-dom'
+import { animatedAnimeList } from '../../../animations/animations'
+import { FD_TopAnimeStore } from '../../../shared/store/fetch/fetchTopAnimeStore'
+import { likes } from '../../../shared/store/likes'
 import { Anime } from '../../../shared/types/types'
 import { Button } from '../../atoms/button/button'
 import { Load } from '../../atoms/load/load'
 import { Info } from '../../molecules/info/info'
 import likeIcon from './../../../assets/like.png'
 import shareIcon from './../../../assets/share.png'
+
 //
 
-export function AnimeList() {
+function AnimeList() {
 	const nav = useNavigate()
+	const isMobile = useMediaQuery({ maxWidth: 700 })
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger)
 	}, [])
 
-	//
-	const [animeList, setAnimeList] = useState<Anime[]>([])
-	const [load, setLoad] = useState(true)
 	const [copy, setCopy] = useState('')
 	const animeBoxesRef = useRef<(HTMLDivElement | null)[]>([])
 
 	//fetchAnime
 	useEffect(() => {
-		axios.get('https://api.jikan.moe/v4/top/anime').then(d => {
-			setAnimeList(d.data.data)
-			setLoad(false)
-		})
+		FD_TopAnimeStore.fetchData()
+		//anim
 	}, [])
 
+	useEffect(() => {
+		if (!FD_TopAnimeStore.animeList) return
+		animatedAnimeList(animeBoxesRef as RefObject<HTMLDivElement[]>, isMobile)
+	}, [FD_TopAnimeStore.animeList])
+
 	const handleLike = (data: Anime) => {
-		setCopy(`http:example.com/anime/${data.mal_id}`)
+		likes.setData(data)
 	}
 	const handleNavigate = (id: string) => {
 		nav(`anime/${id}`)
@@ -51,41 +57,18 @@ export function AnimeList() {
 		}
 	}, [copy])
 
-	//animate boxes anime when scrolling
-	useEffect(() => {
-		if (!animeList) return
-		animeBoxesRef.current.forEach(el => {
-			gsap.fromTo(
-				el,
-				{ opacity: 0, y: 70 },
-				{
-					opacity: 1,
-					y: 0,
-					//
-					scrollTrigger: {
-						trigger: el,
-						start: 'top 90%',
-						toggleActions: 'play none none none',
-					},
-				}
-			)
-		})
-
-		return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-	}, [animeList])
-
 	return (
 		<div>
 			{copy && <Info />}
 
-			{load && (
+			{FD_TopAnimeStore.loading && (
 				<div className=' flex justify-center '>
 					<Load />
 				</div>
 			)}
 
 			<div className='w-[90vw] h-[40vh] mx-auto mt-[30px] flex flex-wrap justify-center perspective-normal'>
-				{animeList.map((data, idx) => (
+				{FD_TopAnimeStore.animeList.map((data, idx) => (
 					<div
 						ref={el => {
 							animeBoxesRef.current[idx] = el
@@ -110,7 +93,7 @@ export function AnimeList() {
 							onClick={() => handleShare(data.mal_id)}
 							className='absolute top-5 right-20
 						w-[40px] h-[40px] p-[3px] rounded-[5px]
-						cursor-pointer  bg-[#333]'
+						cursor-pointer  bg-[#333] '
 						>
 							<img src={shareIcon} alt='ERROR' />
 						</div>
@@ -150,3 +133,5 @@ export function AnimeList() {
 		</div>
 	)
 }
+
+export default observer(AnimeList)
