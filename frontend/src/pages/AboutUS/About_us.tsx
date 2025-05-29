@@ -65,6 +65,31 @@ export default function About_us() {
 					</ul>
 				</div>
 
+				{/* Code, Repo */}
+				<div
+					className='mt-5 text-center
+				w-[80%] mx-auto'
+				>
+					<h2 className='text-3xl mt-20'>Код</h2>
+
+					<ul className='mt-5 font-normal text-[18px] sm:text-2xl lg:text-3xl'>
+						<li>Структура написана так, чтобы быть понятной даже спустя месяцы — проверено лично на себе</li>
+					</ul>
+					
+		
+				</div>
+
+				{/* REPO */}
+				<div className='text-center mt-10 text-blue-700'>
+					<a
+					className='text-2xl'
+
+					href="https://github.com/syntax-91/anime_List"
+					target='_blank'>
+						repo
+					</a>
+				</div>
+
 				{/* Контакты */}
 				<div className='my-5 pb-10 '>
 					<h2 className='text-center text-3xl mt-20'>Контакты</h2>

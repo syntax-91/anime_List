@@ -5,7 +5,7 @@ import { MongoClient } from 'mongodb'
 config({ path: './../.env' })
 
 export async function LoginUser(data) {
-	const client = new MongoClient(process.env.URI)
+	const client = new MongoClient(process.env.URI, { ssl: false })
 
 	try {
 		console.log('Обработка..')
@@ -19,7 +19,7 @@ export async function LoginUser(data) {
 		const user = await users.findOne({ username: data.username })
 
 		console.log('Проверка')
-		if (user) {
+		if (user === true) {
 			const psw = data.password
 			const hashPsw = await hash(psw, 10)
 

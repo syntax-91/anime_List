@@ -28,13 +28,11 @@ export function InpRes() {
 
 	useEffect(() => {
 		const updateData = animeData.filter(e =>
-			e.title.includes(searchRes.searchRes)
+			e.title.toLowerCase().includes(searchRes.searchRes.toLowerCase())
 		)
-		console.log('updating DATA: ', updateData)
+
 		setResult(updateData)
 	}, [searchRes.searchRes])
-
-	console.log('animeData', animeData)
 
 	const handleClick = (id: string) => {
 		nav(`anime/${id}`)
@@ -67,7 +65,7 @@ export function InpRes() {
 										<img
 											src={anime.images.jpg.image_url}
 											alt='1488 error naxui'
-											title='d'
+											title={anime.title}
 											className='rounded-3xl'
 										/>
 									</div>
