@@ -34,9 +34,9 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 				/* OB */
 				<div
 					onClick={() => setIsOpen(false)}
-					className='fixed right-8 elm  w-[200px]
-        py-[10px] rounded-2xl cursor-pointer
-        bg-[rgba(0,0,0,0.2)]/40 z-10 fn_sl'
+					className='fixed right-8 elm  
+					w-[200px] py-[10px] rounded-2xl cursor-pointer fn
+        bg-[rgba(0,0,0,0.2)]/40 z-10 border border-[#5f2d91]'
 				>
 					{/* options */}
 
@@ -45,8 +45,8 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 						<div
 							onClick={() => nav('/login')}
 							className='w-[100%] mx-auto
-           h-[40px] rounded-t-2xl
-            	flex justify-center items-center '
+           h-[40px] rounded-2xl
+            	flex justify-center items-center hover:animate-pulse'
 						>
 							<h3 className='text-[18px] '>Auth</h3>
 						</div>
@@ -56,7 +56,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 
 					<div
 						onClick={() => nav('/settings')}
-						className='w-[100%] mx-auto  h-[40px]   	flex justify-center items-center'
+						className='w-[100%] mx-auto  h-[40px]  hover:animate-pulse 	flex justify-center items-center'
 					>
 						<h3 className='text-[18px] '>Settings</h3>
 					</div>
@@ -65,7 +65,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 
 					<div
 						onClick={() => nav('/likes')}
-						className='w-[100%] mx-auto  h-[40px]  flex justify-center items-center'
+						className='w-[100%] mx-auto  h-[40px] hover:animate-pulse flex justify-center items-center'
 					>
 						<h3 className='text-[18px] '>Likes</h3>
 					</div>
@@ -74,7 +74,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 
 					<div
 						onClick={() => nav('/about')}
-						className='w-[100%] mx-auto h-[40px] flex justify-center items-center'
+						className='w-[100%] mx-auto h-[40px] flex justify-center items-center hover:animate-pulse'
 					>
 						<h3 className='text-[18px] '>About</h3>
 					</div>
@@ -85,7 +85,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 						<div
 							onClick={logOut}
 							className='w-[100%] mx-auto
-           h-[40px] rounded-t-2xl br10t
+           h-[40px] rounded-t-2xl br10t hover:animate-pulse
             	flex justify-center items-center '
 						>
 							<h3 className='text-[18px] '>LogOut</h3>
@@ -94,7 +94,7 @@ export const Menu = observer(({ isOpen, setIsOpen }: MenuProps) => {
 
 					{/* back */}
 
-					<div className='w-[100%] mx-auto h-[40px] 	flex justify-center items-center br10b'>
+					<div className='w-[100%] mx-auto h-[40px] 	flex justify-center items-center br10b hover:animate-pulse'>
 						<h3 className='text-[18px] '>Back</h3>
 					</div>
 
