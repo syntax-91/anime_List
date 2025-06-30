@@ -1,81 +1,119 @@
 .base_ani {
-    transition: all 0.3s ease;
-    animation: base 0.3 ease forwards;
+	transition: all 0.3s ease;
+	animation: base 0.3 ease forwards;
 }
 
 @keyframes base {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 /* fade-in slide Left */
 .fn_sl {
-    animation: w 0.2s ease forwards;
-    transition: all 0.2 ease;
-    cursor: pointer;
+	animation: w 0.2s ease forwards;
+	transition: all 0.2 ease;
+	cursor: pointer;
 }
 
 @keyframes w {
-    0% {
-        opacity: 0;
-        right: 0px;
-    }
+	0% {
+		opacity: 0;
+		right: 0px;
+	}
 
-    100% {
-        opacity: 1;
-        right: 40px;
-    }
+	100% {
+		opacity: 1;
+		right: 40px;
+	}
 }
 
 /* fade-in */
 .fn {
-    transition: all 0.3s ease-in-out;
-    animation: a 0.3s ease;
+	transition: all 0.3s ease-in-out;
+	animation: a 0.3s ease;
 }
 
 @keyframes a {
-    0% {
-        opacity: 0;
-        transform: scale(0.6);
-    }
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
 
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 /* hover: up */
 .hup {
-    transition: all 0.3s ease;
-    cursor: pointer;
-    transform: scale(1);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	transform: scale(1);
 }
 
 .hup:hover,
 .hup:active {
-    background-color: rgba(180, 174, 174, 0.1);
+	background-color: rgba(180, 174, 174, 0.1);
 }
 
 /* pulse */
 
 .pulse {
-    transition: all 0.9s ease;
-    animation: pulse 2s ease-in-out infinite;
+	transition: all 0.9s ease;
+	animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/**/
+
+.ltr {
+	position: relative;
+	animation: ltr 0.3s ease forwards;
+}
+
+.ltr-jump {
+	position: relative;
+	animation: ltr-jump 0.3s ease forwards;
+}
+
+@keyframes ltr {
+	from {
+		left: -30px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+		left: 0px;
+	}
+}
+
+@keyframes ltr-jump {
+	0% {
+		left: -30px;
+	}
+
+	50% {
+		left: 15px;
+	}
+
+	100% {
+		left: 0px;
+	}
 }
