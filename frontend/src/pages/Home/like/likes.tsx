@@ -10,10 +10,7 @@ export const Likes = observer(() => {
 	console.log('lkArr: ', likesArr)
 
 	return (
-		<div
-			className='w-[100%] h-[300px] border
-		border-[#c5c1c1]/20 rounded-2xl overflow-x-auto'
-		>
+		<div className='w-[100%] h-[300px] bsw rounded-2xl overflow-x-auto ltr'>
 			<h2
 				onClick={() => nav(-1)}
 				className='mt-[20px] inline-block ml-[25px] text-[#858383]

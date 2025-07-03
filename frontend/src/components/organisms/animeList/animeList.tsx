@@ -9,7 +9,6 @@ import { FD_TopAnimeStore } from '../../../shared/store/fetch/fetchTopAnimeStore
 import { likes } from '../../../shared/store/likes'
 import { Anime } from '../../../shared/types/types'
 import { Button } from '../../atoms/button/button'
-import { Load } from '../../atoms/load/load'
 import { Info } from '../../molecules/info/info'
 import likeIcon from './../../../assets/like.png'
 import shareIcon from './../../../assets/share.png'
@@ -61,9 +60,9 @@ function AnimeList() {
 		<div>
 			{copy && <Info />}
 
-			{FD_TopAnimeStore.loading && (
-				<div className=' flex justify-center '>
-					<Load />
+			{FD_TopAnimeStore.loading === true && (
+				<div className='m-10 flex justify-center '>
+					<p>подождите..</p>
 				</div>
 			)}
 

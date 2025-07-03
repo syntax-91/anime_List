@@ -1,20 +1,27 @@
- .base {
-	background-color: rgba(96, 95, 95, 0.3);
-	backdrop-filter: blur(50px);	
-	
+.base {
+	transition: all 0.2s linear;
+
+	background-color: rgba(41, 40, 40, 0.3);
+	backdrop-filter: blur(50px);
+
 	padding: 0px 30px;
 	height: 45px;
 	border-radius: 30px;
-	border: 0;
-	display: flex;
-	flex: 1/5;
+
+	box-shadow: 0 0 1px #000;
+
 	width: 90%;
 	outline: 0;
 	margin: 20px 0px;
- } 
+}
 
- @media (min-width: 700px){
+.base:hover,
+.base:focus {
+	box-shadow: 0 0 5px #d9d6d6;
+}
+
+@media (min-width: 700px) {
 	.base {
 		margin-left: 20px;
 	}
- }
+}

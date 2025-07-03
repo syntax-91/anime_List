@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { Wrapper } from '../../components/molecules/wrapper/wrapper'
 import AnimeList from '../../components/organisms/animeList/animeList'
 import { Header } from '../../components/organisms/header/header'
-import { InpRes } from '../../components/organisms/inpRes/inpRes'
+import { QueryRes } from '../../components/organisms/QueryResult/QueryRes'
 import { bgs } from '../../shared/store/bg/bgStore'
 import { searchRes } from '../../shared/store/searchRes/searchRes'
 import s from './stylesHome.module.css'
@@ -18,7 +18,7 @@ function Home() {
 			<div className={s.Home_content}>
 				<Header />
 
-				{searchRes.searchRes && <InpRes />}
+				{searchRes.searchRes && <QueryRes />}
 
 				<div
 					className='w-[90%]

@@ -1,6 +1,6 @@
 import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
-import doneIcon from './../../../assets/done.png'
+import { IoCheckmarkSharp } from 'react-icons/io5'
 
 export function Info() {
 	const boxRef = useRef(null)
@@ -16,11 +16,12 @@ export function Info() {
 		>
 			<div
 				ref={boxRef}
-				className='scale-40 w-[200px] h-[45px] border border-[#444] rounded-4xl
-      text-white/60 opacity-0 flex justify-center items-center bg-black/80'
+				className='scale-40 w-[200px] h-[45px]  rounded-4xl bg-black
+      text-white/60 opacity-0 flex justify-center items-center 
+			bsw gap-2'
 			>
-				<p>Скопировано!</p>
-				<img src={doneIcon} alt='ERROR' className='w-[20px] h-[20px] ml-5' />
+				<p>Скопировано</p>
+				<IoCheckmarkSharp color='#fff' size={20} />
 			</div>
 		</div>
 	)
